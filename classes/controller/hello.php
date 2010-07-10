@@ -19,19 +19,22 @@
  * @version 0.1
  * @license http://mastercj.net/license.txt
  */
-class Controller_Hello extends Controller {
-	public function action_index() {
+class Controller_Hello extends Controller
+{
+	public function action_index()
+	{
 		$this->request->response = View::factory('hello/index');
 	}
 
-	public function action_demo($id) {
+	public function action_demo($id)
+	{
 		switch ($id) {
 			case 1:
 				$hello = new Hello();
-				break;
+			break;
 			case 2:
 				$hello = new Hello('rude');
-				break;
+			break;
 			case 3:
 				$hello = new Hello(false, array(
 					'phrases' => array(
@@ -39,10 +42,10 @@ class Controller_Hello extends Controller {
 						'Salutations, programmer!',
 					),
 				));
-				break;
+			break;
 			default:
 				$hello = new Hello(false);
-				break;
+			break;
 		}
 
 		$this->request->response = View::factory('hello/demo');
