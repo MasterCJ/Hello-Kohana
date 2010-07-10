@@ -36,7 +36,7 @@ class Kohana_Hello_Core {
 		if ($profile !== false) {
 			$config = Arr::merge(Kohana::config('hello.'.$profile), $config);
 		}
-		if (is_array($config) && isset($config['phrases'])) {
+		if (is_array($config) AND isset($config['phrases'])) {
 			foreach ($config['phrases'] as $phrase) { $this->_phrases[] = $phrase; }
 		}
 	}
@@ -47,7 +47,7 @@ class Kohana_Hello_Core {
 	 * @return boolean The greeting
 	 */
 	public function say_something() {
-		if (is_array($this->_phrases) && count($this->_phrases)) {
+		if (is_array($this->_phrases) AND count($this->_phrases)) {
 			return $this->_phrases[intval(rand(0, count($this->_phrases)-1))];
 		} else {
 			return 'I have nothing to say :(';
